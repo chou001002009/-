@@ -6,16 +6,14 @@ import os
 # ==========================================
 # 0. 系統核心設定
 # ==========================================
-# ⚠️ 這是你的真實金鑰，請務必確保你的 GitHub 倉庫是「私密 (Private)」的！
-MY_API_KEY = "AIzaSyC1xrhkRAmcNFjpFEnOo3_15hPeQTlOSw8"
+# 這裡改用 os.environ 讀取，不要直接寫死金鑰
+MY_API_KEY = os.environ.get("GEMINI_API_KEY")
 
-# 使用極速版，速度最快且最穩定，不會報錯
+# 使用極速版 Flash 模型
 AI_MODEL_NAME = "gemini-1.5-flash" 
 
-# 讓系統直接吃你的金鑰
 if MY_API_KEY:
     genai.configure(api_key=MY_API_KEY)
-
 # ==========================================
 # 1. 頻道專屬設定
 # ==========================================
