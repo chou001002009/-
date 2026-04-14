@@ -6,24 +6,23 @@ import os
 # ==========================================
 # 0. 系統核心設定 (保險箱模式)
 # ==========================================
-# 程式會優先從 Streamlit 的 Secrets (雲端保險箱) 或系統變數找金鑰
-# 這樣你的程式碼裡就不會出現任何密碼，防止被 Google 機器人鎖死
 def get_api_key():
-    # 嘗試從 Streamlit Secrets 讀取
     try:
         if "GEMINI_API_KEY" in st.secrets:
             return st.secrets["GEMINI_API_KEY"]
     except:
         pass
-    # 嘗試從本地環境變數讀取
     return os.environ.get("GEMINI_API_KEY", "")
 
 MY_API_KEY = get_api_key()
-AI_MODEL_NAME = "gemini-pro" 
 
+# 這裡改用通用名稱，並強迫初始化時直接對齊
 if MY_API_KEY:
     genai.configure(api_key=MY_API_KEY)
-
+    # 改用這個最保險的宣告方式
+    AI_MODEL_NAME = "gemini-1.5-flash" 
+else:
+    AI_MODEL_NAME = "gemini-1.5-flash"
 # ==========================================
 # 1. 頻道專屬設定
 # ==========================================
