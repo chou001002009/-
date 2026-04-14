@@ -4,12 +4,18 @@ import time
 import os
 
 # ==========================================
-# 0. 系統核心設定
+# 0. 系統核心設定 (隱藏金鑰版)
 # ==========================================
-# 這裡改用 os.environ 讀取，不要直接寫死金鑰
-MY_API_KEY = os.environ.get("GEMINI_API_KEY")
+# 這裡會自動去系統保險箱找金鑰，程式碼裡完全不留痕跡
+MY_API_KEY = os.environ.get("GEMINI_API_KEY") 
 
-# 使用極速版 Flash 模型
+if not MY_API_KEY:
+    # 如果保險箱沒東西，才去讀取 Streamlit 專用的 Secrets
+    try:
+        MY_API_KEY = st.secrets["GEMINI_API_KEY"]
+    except:
+        MY_API_KEY = None
+
 AI_MODEL_NAME = "gemini-1.5-flash" 
 
 if MY_API_KEY:
