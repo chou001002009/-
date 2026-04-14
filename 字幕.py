@@ -97,9 +97,12 @@ def process_content(series, uploaded_file=None, manual_text=None):
 
                 # 高精度 Prompt
                 prompt = (
-                    f"這是一段「{series}」系列的影音。請執行『全文精準還原』，\n"
-                    "絕對不可漏掉任何一句話，即使是重複的對話也要寫下來。\n"
-                    "請嚴格執行 Sunny 營養師的校正規則。"
+                    f"這是「{series}」系列的完整音軌。\n"
+                     "⚠️ 重要指令：這是一個逐字稿聽寫任務，我需要 100% 的全文還原。\n"
+                     "1. 禁止摘要！禁止總結！禁止刪減任何對話！\n"
+                     "2. 聽到的每一個字都要寫下來，包含重複的詞彙。\n"
+                     "3. 如果內容很長，請持續輸出直到最後一個字為止。\n"
+                     "4. 優先保證內容的完整度，其次才是校正規則。"
                 )
 
                 response = model.generate_content(
