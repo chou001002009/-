@@ -63,7 +63,7 @@ def process_content(series, uploaded_file=None, manual_text=None):
             if chunk.text: yield chunk.text
             
    # --- 2. 處理檔案上傳 (Windows 穩定版) ---
-    def process_content(series, uploaded_file=None, manual_text=None):
+def process_content(series, uploaded_file=None, manual_text=None):
     # --- 優化參數設定：加入高精度配置 ---
     generation_config = {
         "temperature": 0.05,        # 降到最低，防止 AI 亂編或跳字
