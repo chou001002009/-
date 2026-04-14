@@ -7,7 +7,7 @@ import os
 # 0. 系統核心設定
 # ==========================================
 # ⚠️ 這是你的真實金鑰，請務必確保你的 GitHub 倉庫是「私密 (Private)」的！
-MY_API_KEY = "AIzaSyBnBZLt4PZg92PgY5kkt5LE7imjaZDZKi4"
+MY_API_KEY = "AIzaSyCE0YaflPc5lzNcj8tcFRZzPdUXyGeEmOs"
 
 # 使用極速版，速度最快且最穩定，不會報錯
 AI_MODEL_NAME = "gemini-1.5-flash" 
