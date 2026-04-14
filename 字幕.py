@@ -29,9 +29,9 @@ MY_API_KEY = get_api_key()
 if MY_API_KEY:
     genai.configure(api_key=MY_API_KEY)
     # 改用這個最保險的宣告方式
-    AI_MODEL_NAME = "models/gemini-2.5-pro" 
+    AI_MODEL_NAME = ""models/gemini-2.0-flash"" 
 else:
-    AI_MODEL_NAME = "models/gemini-2.5-pro"
+    AI_MODEL_NAME = ""models/gemini-2.0-flash""
 # ==========================================
 # 1. 頻道專屬設定
 # ==========================================
