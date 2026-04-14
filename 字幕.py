@@ -16,7 +16,7 @@ def get_api_key():
 
 MY_API_KEY = get_api_key()
 # 2026 最新推薦：使用穩定度最高的 Flash 模型
-AI_MODEL_NAME = "gemini-1.5-flash" 
+AI_MODEL_NAME = "gemini-flash-latest" 
 
 if MY_API_KEY:
     genai.configure(api_key=MY_API_KEY)
